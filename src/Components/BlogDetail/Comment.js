@@ -1,6 +1,4 @@
 import React from "react";
-import logo4 from "../../assets/Screenshot_30.png";
-import logo5 from "../../assets/Screenshot_30.png";
 import logo6 from "../../assets/Screenshot_30.png";
 
 const data = [
@@ -32,7 +30,11 @@ const Comment = ({ images, Name, Dates, Passage }) => {
     <div className="flex md:flex-col md:w-auto w-[20.1rem] flex-row md:mt-2  ">
       <div className="flex md:justify-center md:items-center md:mr-52"></div>
       <div className="flex md:flex-row flex-row md:ml-0 ml-4 md:mt-0 mt-10  ">
-        <img src={images} className="md:ml-20 md:mt-20 h-[60px] w-[60px]" />
+        <img
+          src={images}
+          alt="img"
+          className="md:ml-20 md:mt-20 h-[60px] w-[60px]"
+        />
         <div className="flex flex-col md:flex-col">
           <h1 className="md:ml-10 ml-8 text-sm md:text-base font-bold md:mt-20 w-42 ">
             {Name}
@@ -41,7 +43,7 @@ const Comment = ({ images, Name, Dates, Passage }) => {
             {Dates}
           </h1>
           <p className="md:mt-10 mt-6 ml-8 text-xs md:text-base text-gray-400 md:ml-10">
-            {Passage}{" "}
+            {Passage}
           </p>
         </div>
         <button className="md:ml-[24rem] md:mr-0 mr-4 md:text-base text-sm  font-bold text-md border  h-[32px] md:h-[38px] md:w-24 w-20 hover:bg-red-600 md:mt-20 ">
@@ -54,7 +56,7 @@ const Comment = ({ images, Name, Dates, Passage }) => {
 
 function DummyComment() {
   return (
-    <div className='md:w-auto w-[20rem]'>
+    <div className="md:w-auto sm:w-[20rem]">
       {data.map((item) => {
         return (
           <Comment

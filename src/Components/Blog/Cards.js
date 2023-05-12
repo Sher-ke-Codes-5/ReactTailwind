@@ -35,7 +35,7 @@ const data = [
 const Cards = ({ image, title, head, linking }) => {
   return (
     <div className="flex flex-row gap-4 w-72  ml-10  mt-10">
-      <img src={image} />
+      <img src={image} alt="images" />
       <div className="flex flex-col ">
         <Link to={linking}>
           <span className="hover:text-yellow-300 focus:outline-none">

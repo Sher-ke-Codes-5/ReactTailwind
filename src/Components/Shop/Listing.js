@@ -51,14 +51,14 @@ const data = [
     ],
   },
   {
-    title:'Price',
-    items:[
-        {
-            id:1,
-            val:'Price $500.00 to $55.00'
-        }
-    ]
-  }
+    title: "Price",
+    items: [
+      {
+        id: 1,
+        val: "Price $500.00 to $55.00",
+      },
+    ],
+  },
 ];
 
 const Listing = ({ val }) => {
@@ -99,6 +99,3 @@ function DummyListFunc() {
   );
 }
 export default DummyListFunc;
-{
-  /*> */
-}

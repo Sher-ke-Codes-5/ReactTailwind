@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { CiUser } from "react-icons/ci";
 import { RxCalendar } from "react-icons/rx";
@@ -9,9 +9,7 @@ import logo from "../../assets/Screenshot_20.png";
 import logo2 from "../../assets/Screenshot_21.png";
 import logo4 from "../../assets/Screenshot_22.png";
 import logo5 from "../../assets/Screenshot_23.png";
-import logo6 from "../../assets/Screenshot_24.png";
 import { BsChat } from "react-icons/bs";
-import { SlMagnifier } from "react-icons/sl";
 const data = [
   {
     id: 1,

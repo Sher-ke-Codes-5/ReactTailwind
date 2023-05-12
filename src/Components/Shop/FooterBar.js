@@ -1,11 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 const FooterBar = () => {
-  const [selectedOption, setSelectedOption] = useState("");
-  const handleSelect = (event) => {
-    setSelectedOption(event.target.value);
-  };
   return (
-
     <div className="flex flex-col mt-10 md:ml-48 mr-16 h-[4rem] pt-2  bg-slate-500 ">
       <div className="  flex flex-row ">
         <div className="w-full pl-7">
@@ -17,8 +12,8 @@ const FooterBar = () => {
             <option>Show 12</option>
           </select>
         </div>
-        </div>
-        </div>
+      </div>
+    </div>
   );
 };
 export default FooterBar;

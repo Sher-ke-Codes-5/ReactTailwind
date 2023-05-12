@@ -1,62 +1,22 @@
 import React from "react";
-import Logo from "../../assets/Screenshot_31.png";
 import { TfiBag } from "react-icons/tfi";
-import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
-const ProductCarousel = ({ products }) => {
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          slidesToShow: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-        },
-      },
-    ],
-  };
-
-  return (
-    <Slider {...settings}>
-      {products?.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-    </Slider>
-  );
-};
-
 const ProductCard = ({ product }) => {
   const navigate = useNavigate();
-  console.log("you",product);
+  console.log("you", product);
   const imageInf = () => {
-    console.log("Product",product.Logo);
+    console.log("Product", product.Logo);
     const Logo = product.Logo;
     const id = product.id;
-    const title=product.title;
-    const description=product.description;
-    const price=product.price;
+    const title = product.title;
+    const description = product.description;
+    const price = product.price;
     // console.log(product.logo);
-    navigate(`/ProductPage/${product.id}`, { state: {id,Logo,title,description,price} });
-  
+    navigate(`/ProductPage/${product.id}`, {
+      state: { id, Logo, title, description, price },
+    });
   };
   const handleAddToCart = () => {};
 

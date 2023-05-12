@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Logo2 from "../../assets/Screenshot_5.png";
 import Logo3 from "../../assets/Screenshot_6.png";
 import { RiShoppingBagLine } from "react-icons/ri";
-import { useRef } from "react";
+// import { useRef } from "react";
 
 //import OwlCarousel from "react-owl-carousel";
 import "owl.carousel/dist/assets/owl.carousel.css";
@@ -68,8 +68,7 @@ const Clock = () => {
         </div>
         <div className="relative   md:m-auto md:top-52 md:right-20 right-52 flex  md:justify-center justify-start items-center">
           <button className="bg-yellow-400 whitespace-nowrap md:px-7 p-6  md:py-4   justify-start  text-center font-semibold rounded-full">
-            <span>SHOP NOW{" "}</span>
-            
+            <span>SHOP NOW </span>
           </button>
         </div>
       </div>

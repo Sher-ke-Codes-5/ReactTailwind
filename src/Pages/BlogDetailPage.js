@@ -1,10 +1,6 @@
 import React from "react";
-import PostDetail from "../Components/BlogDetail/PostDetail";
 import Navbar from "../Components/Navbar/Index";
 import HeroBlog from "./../Components/Blog/Hero";
-import Comment from "../Components/BlogDetail/Comment";
-import Reply from "../Components/BlogDetail/Reply";
-import BlogWrite from "../Components/Blog/blogWrite";
 import Footer from "../Components/Footer/index";
 import Form from "../Components/Blog/Form";
 import Combine from "../Components/BlogDetail/Combine";
@@ -15,11 +11,11 @@ const BlogDetailPage = () => {
       <HeroBlog />
       <div className="flex md:flex-row  flex-col  ">
         <Combine />
-      <div className='flex md:mt-96  h-full md:w-96 md:ml-10 ml-5 w-[96%]'>
-        <Form />
+        <div className="flex md:mt-96  h-full md:w-96 md:ml-10 ml-5 w-[96%]">
+          <Form />
+        </div>
       </div>
-      </div>
-      <Footer/>
+      <Footer />
     </div>
   );
 };

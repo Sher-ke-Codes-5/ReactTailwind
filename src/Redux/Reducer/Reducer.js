@@ -4,9 +4,11 @@ const initialState = {
   cartItems: [],
   cartTotal: 0,
   totalPrice: 0,
+  inputValue:0,
 };
 
 export const CartReducer = (state = initialState, action) => {
+  let RealAddedInput=0;
   console.log("cartItems", state.cartItems);
   const item = action.payload;
   switch (action.type) {
@@ -22,31 +24,38 @@ export const CartReducer = (state = initialState, action) => {
           JSON.stringify([...state.cartItems, item])
         );
         const Price = state.totalPrice + item.price;
-        localStorage.setItem("totalPrice", Price);
+        RealAddedInput=item.inputValue;
+        console.log(item.inputValue);
+        let Quantity = item.inputValue * Price;
+        localStorage.setItem("totalPrice", Quantity);
+
         return {
           ...state,
           cartItems: [...state.cartItems, { ...item }],
           cartTotal: state.cartTotal + 1,
-          totalPrice: Price,
+          inputValue:RealAddedInput,
+          totalPrice: Quantity,
         };
       }
-      case DEL_Cart:
-        
-        const data = action.payload;
-        console.log("val",action.payload);
-       
-        const left = state.cartItems.filter(item => item.id !== data.id);
-        console.log("vvv",state.cartItems)
-        const LeftPrice = state.totalPrice - data.price;
-        localStorage.setItem("cartItems", JSON.stringify(left));
-        localStorage.setItem("totalPrice", LeftPrice);
-        return {
-          ...state,
-          cartItems: left,
-          cartTotal: state.cartTotal - 1,
-          totalPrice: LeftPrice
-        };
-      
+    case DEL_Cart:
+      const data = action.payload;
+      const itemTotal = action.payload.price * action.payload.inputValue;
+      const newVar = state.totalPrice - itemTotal;
+      const left = state.cartItems.filter(
+        (item) => item.id !== data.id || action.payload.inputValue === RealAddedInput
+      );
+
+      console.log("vvv", item);
+      localStorage.setItem("cartItems", JSON.stringify(left));
+      localStorage.setItem("totalPrice", newVar);
+      return {
+        ...state,
+        cartItems: left,
+        inputValue:action.payload.inputValue,
+        cartTotal: state.cartTotal - 1,
+        totalPrice: newVar,
+      };
+
     default:
       return {
         ...state,

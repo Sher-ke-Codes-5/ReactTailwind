@@ -1,7 +1,6 @@
 import React from "react";
 import Logo from "../../assets/shoes-removebg-preview.png";
 import Logo2 from "../../assets/11-removebg-preview.png";
-import { screen } from "@testing-library/react";
 
 const Hero = () => {
   return (

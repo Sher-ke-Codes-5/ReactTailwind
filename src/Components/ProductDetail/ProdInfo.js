@@ -1,10 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 import { SlDiamond } from "react-icons/sl";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { addToTheCart,deleteFromCart } from "../../Redux/Action/action";
+import { addToTheCart, deleteFromCart } from "../../Redux/Action/action";
 const ProdInfo = () => {
   const location = useLocation();
   const dispatch = useDispatch();
@@ -15,21 +15,29 @@ const ProdInfo = () => {
   const price = location.state.price;
   const id = location.state.id;
   console.log("its", location.state.title);
+
+  const cartItems = useSelector((state) => state.CartReducer.cartItems);
+  console.log("ids", cartItems);
+
+  const [inputValue, setInputValue] = useState("");
+  const handleInputChange = (e) => {
+    setInputValue(e.target.value);
+  };
   const products = {
     id,
     title,
     price,
     Logo,
     description,
+    inputValue,
   };
-  const cartItems=useSelector((state)=>state.CartReducer.cartItems);
   const isPresent = cartItems.some((item) => item.id === products.id);
 
-  console.log("uuuuu", products);
   const navigate = useNavigate();
-  const remCart=()=>{
+  const remCart = () => {
     dispatch(deleteFromCart(products));
-  }
+  };
+  console.log("uuuuu", products);
   const imageInf = () => {
     dispatch(addToTheCart(products));
     navigate(`/CartPage/${id}`, {
@@ -83,6 +91,8 @@ const ProdInfo = () => {
             id="numbers"
             name="numbers"
             min="0"
+            val={inputValue}
+            onChange={handleInputChange}
             max="100"
             className="pl-1 border-2 focus:outline-none border-gray-300"
           ></input>

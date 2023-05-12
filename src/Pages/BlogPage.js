@@ -2,7 +2,6 @@ import React from "react";
 import HeroBlog from "./../Components/Blog/Hero";
 import Navbar from "../Components/Navbar/Index";
 import Logos from "../Components/Blog/Logos";
-import Dummy from "../Components/Blog/post";
 import BlogWrite from "../Components/Blog/blogWrite";
 import Footer from "./../Components/Footer/index";
 const BlogPage = () => {

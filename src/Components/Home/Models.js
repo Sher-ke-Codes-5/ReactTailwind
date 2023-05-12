@@ -104,7 +104,7 @@ const Models = () => {
           <div className="flex flex-row" key={index}>
             {row.map((item, i) => (
               <div className="flex flex-row md:flex-row md:ml-20 ml-10 mt-5" key={i}>
-                <img className="h-[70px] w-[70px] object-contain" src={logo} />
+                <img className="h-[70px] w-[70px] object-contain" src={logo} alt='pic' />
                 <div className="flex flex-col">
                   <div className="flex pl-5">
                     <text>{item.title}</text>
@@ -124,6 +124,7 @@ const Models = () => {
       <div className='md:flex md:flex-row hidden h-[300px] ml-10 md:ml-20 mt-10 w-[300px] w[30%]'>
                 <img
                 src={Logo}
+                alt='images'
                 />
 
         </div>

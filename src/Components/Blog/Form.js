@@ -4,13 +4,7 @@ import { SlMagnifier } from "react-icons/sl";
 import { MdEmail } from "react-icons/md";
 import logo1 from "../../assets/Screenshot_26.png";
 import { Link } from "react-router-dom";
-import {
-  FaLongArrowAltRight,
-  FaFacebookF,
-  FaTwitter,
-  FaBehanceSquare,
-  FaDribbbleSquare,
-} from "react-icons/fa";
+import { FaFacebookF, FaTwitter, FaBehanceSquare } from "react-icons/fa";
 import { AiOutlineGithub } from "react-icons/ai";
 import Cards from "./Cards";
 const Form = () => {
@@ -56,18 +50,10 @@ const Form = () => {
           Senior Blog Writer{" "}
         </p>
         <div className="flex flex-row mt-3 gap-6">
-          <a href="#">
-            <FaFacebookF />
-          </a>
-          <a href="#">
-            <FaTwitter />
-          </a>
-          <a href="#">
-            <AiOutlineGithub />
-          </a>
-          <a href="#">
-            <FaBehanceSquare />
-          </a>
+          <FaFacebookF />
+          <FaTwitter />
+          <AiOutlineGithub />
+          <FaBehanceSquare />
         </div>
 
         <p className="mt-10 w-72  bg-slate-100  box-border">
@@ -83,7 +69,7 @@ const Form = () => {
 
         {/* <div className="w-[18rem]   h-0.5 border border-b text-white mt-14   border-gray-400"></div> */}
         <div className="md:mt-10 mt-16 w-72  ml-10   ">
-          <img src={logo1} className="h-[250px] w-[250px] ml-5" />
+          <img src={logo1} alt='pic' className="h-[250px] w-[250px] ml-5" />
         </div>
 
         <h1 className="md:text-2xl w-72 ml-10 pl-12 text-white flex bg-yellow-400 mt-8">
@@ -146,38 +132,37 @@ const Form = () => {
           Tag Clouds
         </h1>
         <div>
-        <ul>
-          <Link to="#">
-            <li className="flex gap-[1rem] mt-5 w-72 ml-5 items-center  text-gray-700  ">
-              <p className="bg-slate-100 px-2">Technology</p>{" "}
-              <p className="bg-slate-100 px-2">Fashion</p>{" "}
-              <p className="bg-slate-100 px-2">Architecture</p>
-            </li>
-          </Link>
-          <Link to="#">
-            <li className="flex gap-[2rem] mt-5 ml-5 w-72 items-center  text-gray-700  ">
-              <p className="bg-slate-100 px-2">Art</p>{" "}
-              <p className="bg-slate-100 px-2">Food</p>
-              <p className="bg-slate-100 px-2">Architecture</p>
-            </li>
-          </Link>
-          <Link to="#">
-            <li className="flex gap-[1rem] mt-5  w-72 ml-5 items-center  text-gray-700  ">
-              <p className="bg-slate-100 px-2">Lifestyle</p>{" "}
-              <p className="bg-slate-100 px-2">Food</p>{" "}
-              <p className="bg-slate-100 px-2">Adventure</p>{" "}
-              <p className="bg-slate-100">Food</p>
-            </li>
-          </Link>
-          <Link to="#">
-            <li className="flex gap-[2rem] mt-5 w-72 ml-5 items-center  text-gray-700  ">
-              <p className="px-2 bg-slate-100">Food</p>{" "}
-              <p className="bg-slate-100 px-2">Adventure</p>
-            </li>
-          </Link>
-        </ul>
+          <ul>
+            <Link to="#">
+              <li className="flex gap-[1rem] mt-5 w-72 ml-5 items-center  text-gray-700  ">
+                <p className="bg-slate-100 px-2">Technology</p>{" "}
+                <p className="bg-slate-100 px-2">Fashion</p>{" "}
+                <p className="bg-slate-100 px-2">Architecture</p>
+              </li>
+            </Link>
+            <Link to="#">
+              <li className="flex gap-[2rem] mt-5 ml-5 w-72 items-center  text-gray-700  ">
+                <p className="bg-slate-100 px-2">Art</p>{" "}
+                <p className="bg-slate-100 px-2">Food</p>
+                <p className="bg-slate-100 px-2">Architecture</p>
+              </li>
+            </Link>
+            <Link to="#">
+              <li className="flex gap-[1rem] mt-5  w-72 ml-5 items-center  text-gray-700  ">
+                <p className="bg-slate-100 px-2">Lifestyle</p>{" "}
+                <p className="bg-slate-100 px-2">Food</p>{" "}
+                <p className="bg-slate-100 px-2">Adventure</p>{" "}
+                <p className="bg-slate-100">Food</p>
+              </li>
+            </Link>
+            <Link to="#">
+              <li className="flex gap-[2rem] mt-5 w-72 ml-5 items-center  text-gray-700  ">
+                <p className="px-2 bg-slate-100">Food</p>{" "}
+                <p className="bg-slate-100 px-2">Adventure</p>
+              </li>
+            </Link>
+          </ul>
         </div>
-
       </div>
     </div>
     //  </div>

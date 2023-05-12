@@ -1,10 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 import ProductScreen from "../Home/productScreen";
 const Cards = () => {
-  const [selectedOption, setSelectedOption] = useState("");
-  const handleSelect = (event) => {
-    setSelectedOption(event.target.value);
-  };
   return (
     <div className="flex flex-col  md:w-[80%] w-full md:ml-40  md:mt-96">
       <div className="flex flex-col md:mt-0 mt-10  h-[4rem] pt-2  bg-slate-500 ">
@@ -14,7 +10,9 @@ const Cards = () => {
               <option className="text-sm  focus:bg-yellow-500 appearance-none">
                 Default Setting
               </option>
-              <option className="text-sm focus:bg-gray-500 appearance-none">Default Setting</option>
+              <option className="text-sm focus:bg-gray-500 appearance-none">
+                Default Setting
+              </option>
               <option className="text-sm focus:bg-gray-500 appearance-none">
                 Default Setting
               </option>

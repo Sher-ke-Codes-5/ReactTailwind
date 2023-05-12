@@ -1,10 +1,7 @@
 import React from "react";
-import { TfiTruck, TfiHeadphoneAlt } from "react-icons/tfi";
-import { FiDatabase } from "react-icons/fi";
 import Logo from "../../assets/Screenshot_1.png";
 import Logo2 from "../../assets/Screenshot_2.png";
 import Logo3 from "../../assets/Screenshot_3.png";
-import App from "./../../App";
 
 const Poster = () => {
   return (
