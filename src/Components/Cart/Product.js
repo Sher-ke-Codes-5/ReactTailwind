@@ -4,6 +4,8 @@ import { useSelector } from "react-redux";
 import { addToTheCart, deleteFromCart } from "../../Redux/Action/action";
 
 const Product = () => {
+  //const val;
+
   //const inputValue=useSelector((state)=>state.cartReducer.totalPrice);
   const location = useLocation();
   const [inputVal,setInputVal]=useState('');
