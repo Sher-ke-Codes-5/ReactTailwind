@@ -9,8 +9,14 @@ import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const cartItems = useSelector((state) => state.CartReducer.cartItems);
-  const length = cartItems.length;
-  console.log("length", length);
+
+  if (cartItems.length > 0) {
+    const length = cartItems.length;
+    const lastIndex = cartItems[length - 1].id;
+    console.log(lastIndex);
+  }
+
+  //console.log("length", length);
   //console.log("items ",cartItems[0].id);
   const location = useLocation();
   let pathName = location.pathname;
@@ -123,9 +129,9 @@ const Navbar = () => {
                     </li>
                     <li className="w">
                       <Link
-                        to="/CartPage"
+                        to="/CartPage/id"
                         className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 ${
-                          pathName === "/CartPage"
+                          pathName === "/CartPage/id"
                             ? "text-yellow-400"
                             : "text-gray-800"
                         }`}
@@ -192,21 +198,23 @@ const Navbar = () => {
               </Link>
 
               <Link
-                to="/CartPage"
-                className={`text-gray-800  border-b-4 text-sm font-semibold border-transparent hover:text-yellow-400 ml-10 py-2 ${
-                  pathName === "/CartPage" ? "text-yellow-400" : "text-gray-800"
+                to="/CartPage/id"
+                className={`text-gray-800   text-xl border-b-4 font-semibold border-transparent hover:text-yellow-400 ml-10 py-2
+                ${
+                  pathName === "/CartPage/id"
+                    ? "text-yellow-400"
+                    : "text-gray-800"
                 }`}
               >
-                CART
-              </Link>
-              <Link
-                to="/item"
-                className="text-gray-800   text-xl border-b-4 font-semibold border-transparent hover:text-yellow-400 ml-10 py-2"
-              >
-                <button className="pt-2 ml-10">
+                <button className="pt-2 ml-10 relative    ">
                   <RiShoppingBagLine />
+                  {/* {cartItems.length > 0 && ( */}
+                    <span className="absolute bottom-4 left-2 bg-yellow-400 px-2 py-0.5 rounded-full hover:text-yellow-300  text-black text-sm">
+                      {cartItems.length}
+                    </span>
                 </button>
               </Link>
+
               <button
                 className="text-gray-500 focus:outline-none ml-10 focus:text-gray-700"
                 onClick={handleSearchClick}

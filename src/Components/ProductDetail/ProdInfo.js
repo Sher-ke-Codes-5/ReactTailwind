@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { SlDiamond } from "react-icons/sl";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { addToTheCart, deleteFromCart } from "../../Redux/Action/action";
+import { addToTheCart} from "../../Redux/Action/action";
 const ProdInfo = () => {
   const location = useLocation();
   const dispatch = useDispatch();
@@ -14,15 +14,16 @@ const ProdInfo = () => {
   const description = location.state.description;
   const price = location.state.price;
   const id = location.state.id;
+ 
   console.log("its", location.state.title);
-
   const cartItems = useSelector((state) => state.CartReducer.cartItems);
   console.log("ids", cartItems);
 
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState(1);
   const handleInputChange = (e) => {
     setInputValue(e.target.value);
   };
+  const totalPrice=inputValue*price;
   const products = {
     id,
     title,
@@ -30,18 +31,19 @@ const ProdInfo = () => {
     Logo,
     description,
     inputValue,
+    totalPrice,
   };
   const isPresent = cartItems.some((item) => item.id === products.id);
 
   const navigate = useNavigate();
   const remCart = () => {
-    dispatch(deleteFromCart(products));
+    //dispatch(deleteFromCart(products));
   };
   console.log("uuuuu", products);
   const imageInf = () => {
     dispatch(addToTheCart(products));
     navigate(`/CartPage/${id}`, {
-      state: { products, id, Logo, title, description, price },
+      state: { products, id, Logo, title, description, price,totalPrice,inputValue },
     });
   };
   return (
@@ -90,8 +92,8 @@ const ProdInfo = () => {
             type="number"
             id="numbers"
             name="numbers"
-            min="0"
-            val={inputValue}
+            min="1"
+            value={inputValue}
             onChange={handleInputChange}
             max="100"
             className="pl-1 border-2 focus:outline-none border-gray-300"

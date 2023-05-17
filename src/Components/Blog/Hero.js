@@ -7,7 +7,15 @@ const HeroBlog = () => {
   let routeName = location.pathname.substring(1).replace("Page", " Page");
   const parameterRegex = /\/\d+/g;
   routeName = location.pathname.substring(1).replace(parameterRegex, "");
+  // routeName = 'Cart Page';
+  console.log("ooooooo",routeName);
 
+  if (routeName==='CartPage/id')
+  {
+    console.log("if called")
+    routeName='Cart Page'
+  }
+console.log(routeName);
   return (
     <div
       className="flex flex-col   h-96 md:w-auto w-[23.2rem] md:flex-row absolute inset-0 bg-orange-500 md:bg-transparent md:bg-center md:bg-cover"
