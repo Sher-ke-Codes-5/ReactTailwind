@@ -22,6 +22,7 @@ const Navbar = () => {
   let pathName = location.pathname;
   console.log("path", pathName);
   const [padding, setPadding] = useState(true);
+  const [topBar,setTopBar]=useState(false);
   const [showSearchBar, setShowSearchBar] = useState(false);
   const [showSidebar, setShowSidebar] = useState(false);
   const [showSidebarSmallScreen, setShowSidebarSmallScreen] = useState(false);
@@ -40,7 +41,21 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll2);
+    return () => {
+      window.removeEventListener("scroll", handleScroll2);
+    };
+  }, []);
+const handleScroll2=()=>{
+  if (window.pageYOffset>0){
+    setTopBar(true);
 
+  }
+  else{
+    setTopBar(false);
+  }
+}
   const handleSearchClick = () => {
     setShowSearchBar((ShowSearchBar) => !ShowSearchBar);
 
@@ -59,7 +74,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className=" md:w-auto w-auto md:relative">
+      <div className=" md:w-auto w-[100%] md:relative">
         <div
           className={`bg-slate-100 md:mt-0 mt-0 z-10 md:flex items-center md:justify-between lg:space-x-8 transition-all duration-300 ${
             padding
@@ -76,7 +91,7 @@ const Navbar = () => {
             />
 
             <Link
-              to="/home"
+              to="/"
               className="font-bold md:text-xl text-2xl my-2 mb-4 items-center justify-start text-slate-900 mt-4"
             >
               Karma
@@ -216,7 +231,7 @@ const Navbar = () => {
               </Link>
 
               <button
-                className="text-gray-500 focus:outline-none ml-10 focus:text-gray-700"
+                className="text-gray-500 focus:outline-none ml-10 delay-700 transition-all duration-1000 ease-in-out focus:text-gray-700"
                 onClick={handleSearchClick}
               >
                 {showSearchBar ? (
@@ -230,17 +245,21 @@ const Navbar = () => {
         </div>
       </div>
       <div
-        className={` relative w-[80%] mx-24 inset-0 top-32 z-50  bg-orange-500  transition-all duration-700 ${
-          showSearchBar ? "h-12 " : "h-0"
-        }`}
+        className={` relative lg:w-[81.4%] md:w-[81.4%] sm:w-0 w-0  ml-[8rem] inset-0 top-0 z-50  bg-orange-600  transition-height duration-1000 ease-in-out ${
+          showSearchBar ? "h-12 " : "h-0" 
+          
+         
+        } ${
+          topBar? "hidden mt-[8.rem] ":"mt-0"
+        }` }onClick={handleScroll2}
       >
-        <form className="pb-10 hidden  items-center">
+        <form className="pb-10   items-center">
           <div
             className={`relative w-full ${showSearchBar ? "ml-0" : "ml-auto"}`}
           >
             <input
               type="text"
-              className={`w-full h-full pt-10 pl-10    bg-orange-500  transition-all duration-1000 focus:outline-none  ${
+              className={`w-full h-full pt-10 pl-10 text-center placeholder-white text-black  bg-orange-500  transition-all duration-1000 focus:outline-none  ${
                 showSearchBar ? "opacity-100" : "hidden"
               }`}
               placeholder="Search for anything"

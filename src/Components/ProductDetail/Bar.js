@@ -12,8 +12,8 @@ const Bar = () => {
   };
 
   return (
-    <div className="flex flex-col">
-      <div className="flex flex-wrap w-[21rem] ml-5 md:mt-1 mt-10  md:h-14 h-[5rem] mb-20 md:w-[80%] md:ml-32 md:mr-20   bg-slate-200">
+    <div className="flex flex-col ">
+      <div className="flex flex-wrap w-[21rem] ml-5 md:mt-1 mt-10 md:h-14 h-[50rem] mb-20 md:w-[80%] md:ml-32 md:mr-20  ">
         <TabView
           activeIndex={activeIndex}
           className=" md:w-32 flex-nowrap navbar"
@@ -21,9 +21,11 @@ const Bar = () => {
         >
           <TabPanel
             header="Description"
-            className="flex md:w-[67.5rem] md:text-base text-sm  mt-0  ml-0 md:pt-3  hover:bg-gradient-to-r from-orange-500  to-yellow-500  text-black bg-white px-4 py-2 panel"
+            className={` flex md:w-[67.5rem] md:text-base text-sm mt-5  ml-0 md:pt-3  hover:bg-gradient-to-r from-orange-500  to-yellow-500  text-black bg-white px-4 py-2 panel ${
+              activeIndex === 0 ? "bg-yellow-500" : "bg-white"
+            } `}
           >
-            <p className="hover:bg-white  text-gray-500 mt-20">
+            <p className=" md:text-base text-lg text-black my-20">
               Beryl Cook is one of Britain’s most talented and amusing artists
               .Beryl’s pictures feature women of all shapes and sizes enjoying
               themselves .Born between the two world wars, Beryl Cook eventually
@@ -53,23 +55,29 @@ const Bar = () => {
           </TabPanel>
           <TabPanel
             header="Comments"
-            className="flex md:w-[67.5rem] md:text-base text-sm  mt-0  ml-0 md:pt-3  hover:bg-gradient-to-r from-orange-500  to-yellow-500  text-black bg-white px-4 py-2 panel"
+            className={` flex md:w-[67.5rem] md:text-base text-sm  mt-5  ml-0 md:pt-3  hover:bg-gradient-to-r from-orange-500  to-yellow-500  text-black bg-white px-4 py-2 panel ${
+              activeIndex === 1 ? "bg-yellow-500" : "bg-white"
+            } `}
           >
-            <CommentsDummy className="hover:bg-white" />
+            <CommentsDummy className="hover:bg-white h-[40rem]" />
           </TabPanel>
 
           <TabPanel
             header="Review"
-            className="flex md:w-[67.5rem] md:text-base text-sm  mt-0  ml-0 md:pt-3  hover:bg-gradient-to-r from-orange-500  to-yellow-500  text-black bg-white px-4 py-2 panel"
+            className={` flex md:w-[67.5rem] md:text-base text-sm  mt-5  ml-0 md:pt-3  hover:bg-gradient-to-r from-orange-500  to-yellow-500  text-black bg-white px-4 py-2 panel ${
+              activeIndex === 2 ? "bg-yellow-500" : "bg-white"
+            } `}
           >
             <RevDummy />
           </TabPanel>
           <TabPanel
             header="Specification"
-            className="md:flex md:ml-0 md:mt-0 md:w-[67.5rem] md:text-base text-sm     md:pt-3  hover:bg-gradient-to-r from-orange-500  to-yellow-500  text-black bg-white px-4 py-2 panel"
+            className={` flex md:w-[67.5rem] mt-5 md:text-base text-sm    ml-0 md:pt-3 hover:bg-gradient-to-r from-orange-500  to-yellow-500  text-black bg-white px-4 py-2 panel ${
+              activeIndex === 3 ? "bg-yellow-500" : "bg-white"
+            } `}
           >
-            <div className="flex flex-row">
-              <div className="flex-1 ">
+            <div className="flex flex-row ">
+              <div className="flex-1">
                 <SpecifDummy />
               </div>
             </div>

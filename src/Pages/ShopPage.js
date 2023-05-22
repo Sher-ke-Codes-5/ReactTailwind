@@ -5,7 +5,7 @@ import ShopDetail from "../Components/Shop/shopDetail";
 
 const ShopPage = () => {
   return (
-    <div className="flex flex-col h-full w-[95%] md:w-full">
+    <div className="flex flex-col h-full w-[100%] md:w-full">
       <Navbar />
       <HeroBlog />
       <ShopDetail />

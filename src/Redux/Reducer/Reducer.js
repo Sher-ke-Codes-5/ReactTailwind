@@ -7,7 +7,7 @@ import {
 const initialState = {
   cartItems: [],
   cartTotal: 0,
-  inputValue: 0,
+  inputValue: 0,  
   totalPrice: 0,
 };
 export const CartReducer = (state = initialState, action) => {

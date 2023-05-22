@@ -30,6 +30,17 @@ const data = [
     title: "When Packing",
     val: "With out touching Hand",
   },
+  {
+    id: 7,
+    title: "When Packing",
+    val: "With out touching Hand",
+  },
+  {
+    id: 8,
+    title: "When Packing",
+    val: "With out touching Hand",
+  },
+
 ];
 const Specif = ({ data }) => {
   return (
@@ -48,7 +59,7 @@ const Specif = ({ data }) => {
 
 const SpecifDummy = () => {
   return (
-    <div className='flex flex-col gap-y-10'>
+    <div className='flex flex-col md:h-auto h-[45rem]  md:my-10 sm:my-20 my-20  gap-y-10'>
       {data.map((data) => (
         <div key={data.id}>
           <Specif data={data} key={data.id} title={data.title} val={data.val} />

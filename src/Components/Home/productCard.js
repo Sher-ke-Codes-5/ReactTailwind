@@ -40,7 +40,7 @@ dispatch(deleteFromCart(product))
 
 
   return (
-    <div className="bg-slate-100 mt-20  w-[100%]  md:mr-10  flex md:flex-col flex-col md:pb-2"
+    <div className="bg-slate-100 mt-20  w-[100%]  md:mr-10  flex md:flex-col flex-col pb-4"
       >
       <div className="  w-full  md:w-auto">
         <div onClick={imageInf}>
