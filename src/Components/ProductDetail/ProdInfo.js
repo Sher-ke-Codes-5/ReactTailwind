@@ -4,7 +4,7 @@ import { useLocation } from "react-router-dom";
 import { SlDiamond } from "react-icons/sl";
 import { AiOutlineHeart } from "react-icons/ai";
 import { useDispatch, useSelector } from "react-redux";
-import { addToTheCart} from "../../Redux/Action/action";
+import { addItemInCart } from "../../Redux/Reducer/CartReducer";
 const ProdInfo = () => {
   const location = useLocation();
   const dispatch = useDispatch();
@@ -16,7 +16,7 @@ const ProdInfo = () => {
   const id = location.state.id;
  
   console.log("its", location.state.title);
-  const cartItems = useSelector((state) => state.CartReducer.cartItems);
+  const cartItems = useSelector((state) => state.cartItems);
   console.log("ids", cartItems);
 
   const [inputValue, setInputValue] = useState(1);
@@ -41,7 +41,8 @@ const ProdInfo = () => {
   };
   console.log("uuuuu", products);
   const imageInf = () => {
-    dispatch(addToTheCart(products));
+    //dispatch(addToTheCart(products));
+    dispatch(addItemInCart(products));
     navigate(`/CartPage/${id}`, {
       state: { products, id, Logo, title, description, price,totalPrice,inputValue },
     });

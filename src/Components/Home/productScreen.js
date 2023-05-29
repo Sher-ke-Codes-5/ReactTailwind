@@ -8,56 +8,56 @@ const ProductScreen = () => {
 
   const products = [
     {
-      id: 1,
+      id: 0,
       title: "Product 1",
       price: 10,
       Logo: Logo,
       description: "This is the description for product 1.",
     },
     {
-      id: 2,
+      id: 1,
       title: "Product 2",
       price: 20,
       Logo: Logo,
       description: "This is the description for product 2.",
     },
     {
-      id: 3,
+      id: 2,
       title: "Product 3",
       price: 30,
       Logo: Logo,
       description: "This is the description for product 3.",
     },
     {
-      id: 4,
+      id: 3,
       title: "Product 4",
       price: 40,
       Logo: Logo,
       description: "This is the description for product 4.",
     },
     {
-      id: 5,
+      id: 4,
       title: "Product 5",
       price:50,
       Logo: Logo,
       description: "This is the description for product 5.",
     },
     {
-      id: 6,
+      id: 5,
       title: "Product 6",
       price: 50,
       Logo: Logo,
       description: "This is the description for product 5.",
     },
     {
-      id: 7,
+      id: 6,
       title: "Product 7",
       price: 50,
       Logo: Logo,
       description: "This is the description for product 5.",
     },
     {
-      id: 8,
+      id: 7,
       title: "Product 8",
       price: 50,
       Logo: Logo,
@@ -70,11 +70,13 @@ const ProductScreen = () => {
   if (routeName === "/ShopPage") {
     width = "1/3";
     productToShow = products.slice(0, 6);
-    console.log("i", productToShow);
   } else {
-    width = "1/4";
+    if (window.innerWidth>=768 && window.innerWidth<1024)
+    width = "1/2";
+    
+
+  
   }
-  console.log("he", products);
 
   const handleAddToCartClick = (productId) => {
     console.log("Add to cart clicked for product id:", productId);
@@ -89,7 +91,7 @@ const ProductScreen = () => {
       {/* <ProductCarousel products={products} /> */}
       <div className="flex md:flex-row flex-col flex-wrap  w-full md:justify-between">
         {productToShow.map((product) => (
-          <div className={`md:w-${width} w-full px-10`} key={product.id}>
+          <div className={`lg:w-${width}  md:w-1/2 sm:w-full px-10`} key={product.id}>
             <ProductCard
               key={product.id}
               product={product}

@@ -4,7 +4,7 @@ import Reply from "./Reply";
 import DummyComment from "./Comment";
 const Combine = () => {
   return (
-    <div className="flex flex-col md:w-full">
+    <div className="flex flex-col sm:w-full w-full  md:w-full">
       <PostDetail />
       <DummyComment />
       <Reply />

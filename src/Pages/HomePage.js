@@ -12,7 +12,7 @@ import Models from "../Components/Home/Models";
 import Footer from "../Components/Footer";
 const HomePage = () => {
   return (
-    <div className="flex  flex-col h-screen w-[100%] md:w-full relative">
+    <div className="flex  flex-col h-screen w-[100%] lg:w-full relative">
       <Navbar />
       <Hero />
       <Logos />

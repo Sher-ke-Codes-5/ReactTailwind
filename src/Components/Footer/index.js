@@ -66,11 +66,11 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="flex w-full md:w-1/4 flex-col">
-          <h1 className="text-2xl mt-10 text-white md:ml-12 font-semibold">
+        <div className="flex w-full md:ml-10 lg:w-1/4  flex-col">
+          <h1 className="text-2xl mt-10 text-white md:ml-16 font-semibold">
             Instagram Feed
           </h1>
-          <div className="flex flex-wrap   mt-5 md:ml-10 md:flex-row md:flex-wrap">
+          <div className="flex flex-wrap   mt-5 md:ml-16 md:flex-row md:flex-wrap">
             {images.map((image) => (
               <div key={image.id} className="w-1/4 p-1  md:w-auto">
                 <img

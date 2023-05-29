@@ -6,14 +6,17 @@ import Form from "../Components/Blog/Form";
 import Combine from "../Components/BlogDetail/Combine";
 const BlogDetailPage = () => {
   return (
-    <div className="flex flex-col h-screen w-[23.1rem] md:w-full ">
+    <div className="flex flex-col h-full sm:w-full lg:w-full md:w-full ">
       <Navbar />
       <HeroBlog />
-      <div className="flex md:flex-row  flex-col  ">
+      <div className="flex md:flex-row gap-[10rem] md:w-[60%] w-auto flex-col  ">
+        <div className="sm:w-auto md:w-[100%]">
         <Combine />
-        <div className="flex md:mt-96  h-full md:w-96 md:ml-10 ml-5 w-[96%]">
-          <Form />
         </div>
+        <div className='mt-96 flex flex-row '>
+          <Form />
+          </div>
+       
       </div>
       <Footer />
     </div>

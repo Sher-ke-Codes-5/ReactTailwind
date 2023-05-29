@@ -4,15 +4,18 @@ import { BsTrash3} from 'react-icons/bs';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useNavigate } from "react-router-dom";
-import { addToTheCart, deleteFromCart } from "../../Redux/Action/action";
 import { useDispatch,useSelector } from "react-redux";
-
+import { addItemInCart,removeItemInCart} from "../../Redux/Reducer/CartReducer";
 const ProductCard = ({ product }) => {
-const cartItems=useSelector((state)=>state.CartReducer.cartItems);
- const isPresent = cartItems.some((item) => item.id === product.id);
+//const cartItems=useSelector((state)=>state.CartReducer.cartItems);
+const cartItems2=useSelector((state)=>state.cartItems);
+console.log("CartItems tool",cartItems2);
+
+ const isPresent = cartItems2.some((item) => item.id === product.id);
 
 const handleFun2=(product)=>{
-dispatch(deleteFromCart(product))
+dispatch(removeItemInCart(product))
+//dispatch(deleteFromCart(product))
 }
   const navigate = useNavigate();
   const dispatch=useDispatch();
@@ -23,7 +26,8 @@ dispatch(deleteFromCart(product))
       inputValue: 1,
       totalPrice: 1* product.price,
     };
-    dispatch(addToTheCart(updatedProduct));
+    dispatch(addItemInCart(updatedProduct));
+    //dispatch(addToTheCart(updatedProduct));
   }
   const imageInf = () => {
     console.log("Product", product.Logo);

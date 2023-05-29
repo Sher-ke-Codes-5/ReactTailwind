@@ -2,7 +2,7 @@ import React from "react";
 
 const Reply = () => {
   return (
-    <div className="flex mb-10 w-[87%] md:w-[91%] border ml-5 mr-5 md:mr-5 md:ml-20 flex-col mt-10 bg-slate-100">
+    <div className="flex mb-10 w-[87%] md:w-[50rem] border ml-5 mr-5 md:mr-5 md:ml-20 flex-col mt-10 bg-slate-200">
       <h1 className="text-xl font-semibold ml-24 md:ml-[20rem] w-[50%] md:w-[60%] text-gray-800">
         {" "}
         Leave a Reply{" "}

@@ -59,8 +59,8 @@ const Post = ({ id, title, description, image, buttonText }) => {
     navigate(`/blogDetail/${id}`, { state: { title, description } });
   };
   return (
-    <div className="flex  flex-col md:flex-row w-full md:w-[100%] md:pl-20 md:pr-5  bg-slate-100">
-      <div className="flex flex-col md:w-1/4 w-full">
+    <div className="flex  flex-col md:flex-row sm:w-full md:w-auto md:pl-20 md:pr-5  bg-slate-100">
+      <div className="flex flex-col md:w-1/4 sm:w-full">
         <div className="flex flex-row pt-10 md:text-left text-right md:pl-5 pl-52">
           <Link to="#">Food,Technology,</Link>
         </div>
@@ -92,13 +92,19 @@ const Post = ({ id, title, description, image, buttonText }) => {
           </Link>
         </ul>
       </div>
-      <div className="flex flex-col md:pr-10 pt-10 ">
+      <div className="flex flex-col sm:w-auto md:w-[90%] md:pr-10 pt-10 ">
         <div className="md:items-center md:ml-10">
-          <img src={image} alt="pic" />
+          <img
+            src={image}
+            alt="pic
+          
+          "
+            className="sm:h-auto sm:w-auto md:w-auto md:h-auto w-auto h-auto lg:w-[400px]"
+          />
         </div>
 
-        <h1 className="md:text-3xl text-2xl md:ml-10 font-semibold">{title}</h1>
-        <p className="md:pl-10 md:pr-0 pl-5 pr-8 text-gray-700">
+        <h1 className="md:text-xl text-2xl md:ml-10 font-semibold">{title}</h1>
+        <p className="md:pl-10 md:pr-0 text-sm pl-5 pr-8 text-gray-700 sm:w-auto md:w-96">
           {description}
         </p>
         <button
@@ -114,7 +120,7 @@ const Post = ({ id, title, description, image, buttonText }) => {
 
 function Dummy() {
   return (
-    <div>
+    <div className="sm:w-auto md:w-[65%]">
       {data.map((item) => {
         return (
           <Post

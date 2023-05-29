@@ -2,27 +2,22 @@ import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { BsTrash3 } from "react-icons/bs";
-
-import {
-  clearCart,
-  deleteFromCart,
-  updateProduct,
-} from "../../Redux/Action/action";
+import {updateItemInCart,removeItemInCart,delALL} from '../../Redux/Reducer/CartReducer'
 const Product = () => {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.CartReducer.cartItems);
-  const totalPrice = useSelector((state) => state.CartReducer.totalPrice);
+  const cartItems = useSelector((state) => state.cartItems);
+  const totalPrice = useSelector((state) => state.totalPrice);
 
-  console.log(cartItems);
+ // console.log(cartItems);
   const navigate = useNavigate();
   //const [inputVal, setInputVal] = useState(); its needed
 
   const RemoveVal = () => {
-    dispatch(clearCart(cartItems));
+    dispatch(delALL(cartItems));
   };
   const removeItemsQuantity = (m) => {
     console.log("product", m);
-    dispatch(deleteFromCart(m));
+    dispatch(removeItemInCart(m));
   };
   const handleInput = (e, m) => {
     console.log("test on change", m);
@@ -33,7 +28,8 @@ const Product = () => {
       inputValue: newInputVal,
       totalPrice: newInputVal * m.price,
     };
-    dispatch(updateProduct(updatedProduct));
+    dispatch(updateItemInCart(updatedProduct))
+    //dispatch(updateProduct(updatedProduct));
   };
 
   const HandleContinue = () => {

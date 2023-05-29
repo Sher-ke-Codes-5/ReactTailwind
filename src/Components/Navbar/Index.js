@@ -8,7 +8,8 @@ import { RiShoppingBagLine } from "react-icons/ri";
 import { useLocation } from "react-router-dom";
 
 const Navbar = () => {
-  const cartItems = useSelector((state) => state.CartReducer.cartItems);
+  const cartItems = useSelector((state) => state.cartItems);
+  console.log(cartItems);
 
   if (cartItems.length > 0) {
     const length = cartItems.length;
@@ -59,13 +60,13 @@ const handleScroll2=()=>{
   const handleSearchClick = () => {
     setShowSearchBar((ShowSearchBar) => !ShowSearchBar);
 
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1024) {
       setShowSidebarSmallScreen(false);
     }
   };
 
   const handleSidebarClick = () => {
-    if (window.innerWidth < 768) {
+    if (window.innerWidth < 1024) {
       setShowSidebarSmallScreen(!showSidebarSmallScreen);
     } else {
       setShowSidebar(!showSidebar);
@@ -74,12 +75,12 @@ const handleScroll2=()=>{
 
   return (
     <>
-      <div className=" md:w-auto w-[100%] md:relative">
+      <div className=" lg:w-auto md:w-[100%] sm:w-[100%] lg:relative">
         <div
-          className={`bg-slate-100 md:mt-0 mt-0 z-10 md:flex items-center md:justify-between lg:space-x-8 transition-all duration-300 ${
+          className={`bg-white md:mt-0 mt-0 z-10 lg:flex items-center md:justify-between lg:space-x-8 transition-all duration-300 ${
             padding
-              ? "md:mx-32   md:mt-16 md:px-4 "
-              : "md:mx-0 md:mt-0 md:fixed sm:w-[23rem] md:w-[100%]  "
+              ? "lg:mx-32   lg:mt-16 lg:px-4 "
+              : "lg:mx-0 lg:mt-0 lg:fixed sm:w-[23rem] md:w-full lg:w-[100%]  "
           }`}
           onScroll={handleScroll}
         >
@@ -87,7 +88,7 @@ const handleScroll2=()=>{
             <img
               src={Logo}
               alt="Logo"
-              className="md:w-16 w-12 h-auto md:mr-4 md:mb-4"
+              className="lg:w-16 w-12 h-auto lg:mr-4 lg:mb-4"
             />
 
             <Link
@@ -98,15 +99,15 @@ const handleScroll2=()=>{
             </Link>
 
             <div className="flex flex-col">
-              <div className="md:hidden text-gray-10 w-auto flex-wrap hover:text-slate-300 ml-20 absolute top-0.5 pt-2 right-2">
+              <div className="lg:hidden text-gray-10 w-auto flex-wrap hover:text-slate-300 ml-20 absolute top-0.5 pt-2 right-2">
                 <button onClick={handleSidebarClick}>
                   <FaBars className="text-5xl mt-4 pb-4" />
                 </button>
               </div>
 
               {(showSidebar || showSidebarSmallScreen) && (
-                <div className="absolute top-0 left-0 md:h-screen bg-white w-44">
-                  <div className=" md:hidden text-gray-600 right-2 flex justify-start"></div>
+                <div className="absolute top-0 left-0 lg:h-screen bg-white w-44">
+                  <div className=" lg:hidden text-gray-600 right-2 flex justify-start"></div>
                   <ul className="mt-10 flex text-base flex-col pt-10 pb-32 justify-center h-auto">
                     <li className="w-100 ">
                       <Link
@@ -115,7 +116,7 @@ const handleScroll2=()=>{
                           pathName === "/" ? "text-yellow-400" : "text-gray-800"
                         }`}
                       >
-                        Home
+                        Homes
                       </Link>
                     </li>
                     <li className="w-100">
@@ -172,7 +173,7 @@ const handleScroll2=()=>{
             </div>
           </div>
 
-          <div className="hidden md:flex items-center pr-5">
+          <div className="hidden lg:flex items-center pr-5">
             <div className="relative">
               <Link
                 to="/"
@@ -245,7 +246,7 @@ const handleScroll2=()=>{
         </div>
       </div>
       <div
-        className={` relative lg:w-[81.4%] md:w-[81.4%] sm:w-0 w-0  ml-[8rem] inset-0 top-0 z-50  bg-orange-600  transition-height duration-1000 ease-in-out ${
+        className={` relative lg:w-[81.4%] md:w-0 sm:w-0 w-0  ml-[8rem] inset-0 top-0 z-50  bg-orange-600  transition-height duration-1000 ease-in-out ${
           showSearchBar ? "h-12 " : "h-0" 
           
          
