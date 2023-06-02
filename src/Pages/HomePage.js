@@ -5,7 +5,6 @@ import Hero from "../Components/Home/hero";
 import Logos from "../Components/Home/logos";
 import Poster from "../Components/Home/Poster";
 import ProductScreen from "./../Components/Home/productScreen";
-
 import Clock from "../Components/Home/add";
 import CompLogos from "../Components/Home/Company";
 import Models from "../Components/Home/Models";

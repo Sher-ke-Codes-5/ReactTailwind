@@ -1,10 +1,17 @@
-
-  @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
-
-
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.addBorder .MuiInputBase-root.MuiOutlinedInput-root {
+ 
+  /* border-radius: 5px;
+  md:width: 17rem;
+  height: 35px;
+padding: "5.5px 14px", */
+  
+}
+
 
 
